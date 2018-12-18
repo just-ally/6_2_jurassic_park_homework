@@ -5,6 +5,10 @@ const Dinosaur = require('../models/dinosaur.js');
 describe('Park', function() {
 
   let park;
+  let dinosaur1;
+  let dinosaur2;
+  let dinosaur3;
+  let dinosaurs;
 
   beforeEach(function () {
     dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
@@ -30,12 +34,16 @@ describe('Park', function() {
   });
 
   it('should be able to add a dinosaur to its collection', function() {
-    park.dinosaurAdd(dinosaur3)
+    park.addDinosaur(dinosaur3);
     const actual = park.dinosaurCollection.length;
     assert.strictEqual(actual, 3)
   });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function() {
+    park.removeDinosaur();
+    const actual = park.dinosaurCollection.length;
+    assert.strictEqual(actual, 1)
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 

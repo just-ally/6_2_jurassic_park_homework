@@ -4,8 +4,12 @@ const Park = function (name, ticketPrice, dinosaurCollection) {
   this.dinosaurCollection = dinosaurCollection;
 }
 
-Park.prototype.dinosaurAdd = function(dinosaur) {
+Park.prototype.addDinosaur = function(dinosaur) {
   this.dinosaurCollection.push(dinosaur)
+}
+
+Park.prototype.removeDinosaur = function() {
+  this.dinosaurCollection.shift()
 }
 
 
